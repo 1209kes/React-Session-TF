@@ -1,5 +1,6 @@
 import React from 'react';
 import { showAlert } from '../../utils/Button';
+import './Main.module.css';
 
 const Main = () => {
     // 버튼 클릭 시 호출될 함수

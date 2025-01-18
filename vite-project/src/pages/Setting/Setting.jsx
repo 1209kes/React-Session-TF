@@ -1,5 +1,5 @@
 import React from 'react';
-import './Setting.css';
+import './Setting.module.css';
 
 const Setting = () => {
     return (
