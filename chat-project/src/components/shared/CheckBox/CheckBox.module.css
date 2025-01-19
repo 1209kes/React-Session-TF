@@ -1,0 +1,36 @@
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checked {
+    background-color: #000000;
+    border: none;
+}
+
+.checkmark {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkboxText {
+    font-size: 14px;
+    color: #333;
+}
