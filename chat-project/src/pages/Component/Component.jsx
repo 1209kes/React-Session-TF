@@ -3,6 +3,7 @@ import Header from '../../components/layout/Header/Header';
 import Footer from '../../components/layout/Footer/Footer';
 import Button from '../../components/shared/Button/Button';
 import MessageList from '../../components/MessageList/MessageList';
+import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import styles from './Component.module.css';
 import { showAlert } from '../../utils/Alert';
 
@@ -30,6 +31,8 @@ const ComponentPage = () => {
                 Content goes here
                 <Button label="User Profile" onClick={UserClick} />
                 <Button label="Begin a New Chat" onClick={ChatClick} />
+                <Button label="User Profile" onClick={UserClick} leftIcon={faUser} rightIcon={faCog} />
+                <Button label="Begin a New Chat" onClick={ChatClick} rightIcon={faPlus} />
                 <MessageList messages={messages} />
             </main>
             <Footer />
