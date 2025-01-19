@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import Header from '../../components/layout/Header/Header';
-import Footer from '../../components/layout/Footer/Footer';
 import Button from '../../components/shared/Button/Button';
 import MessageList from '../../components/MessageList/MessageList';
 import CustomCheckbox from '../../components/shared/CheckBox/CheckBox';
 import CustomSwitch from '../../components/shared/Swtich/Switch';
-import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
-import styles from './Component.module.css';
+import Input from '../../components/Input/Input';
+import { faUser, faCog, faPlus, faSadCry } from '@fortawesome/free-solid-svg-icons';
 import { showAlert } from '../../utils/Alert';
+import styles from './Component.module.css';
 
 const ComponentPage = () => {
     const messages = [
@@ -41,9 +40,12 @@ const ComponentPage = () => {
         showAlert('새로운 채팅을 시작할까요?');
     };
 
+    const StartClick = () => {
+        showAlert('시작하기!');
+    };
+
     return (
         <div className={styles['page-container']}>
-            <Header />
             <main className={styles.content}>
                 <Button label="User Profile" onClick={UserClick} />
                 <Button label="Begin a New Chat" onClick={ChatClick} />
@@ -56,8 +58,8 @@ const ComponentPage = () => {
                     label="Big Kahuna Burger Ltd."
                 />
                 <CustomSwitch enabled={switchEnabled} onChange={handleSwitchChange} />
+                <Input />
             </main>
-            <Footer />
         </div>
     );
 };

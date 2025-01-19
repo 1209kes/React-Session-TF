@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Button.module.css';
 
-const Button = ({ label, onClick, leftIcon, rightIcon, iconColor }) => {
+const Button = ({ label, onClick, leftIcon, rightIcon }) => {
     return (
         <button onClick={onClick} className={styles.button}>
             <span className={styles.label}>

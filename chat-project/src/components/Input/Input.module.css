@@ -1,0 +1,32 @@
+.inputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(189, 186, 186);
+    border-radius: 39px;
+    padding: 5px 10px;
+    gap: 5px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+    flex-grow: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    outline: none;
+    background-color: rgb(189, 186, 186);
+}
+
+.label {
+    flex-grow: 1;
+    text-align: inherit; /* text-align이 동적으로 적용되도록 설정 */
+}
+
+.inputField::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
