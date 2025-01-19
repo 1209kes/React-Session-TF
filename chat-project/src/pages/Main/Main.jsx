@@ -1,5 +1,5 @@
 import React from 'react';
-import { showAlert } from '../../utils/Button';
+import { showAlert } from '../../utils/Alert';
 import './Main.module.css';
 
 const Main = () => {
