@@ -8,6 +8,7 @@ import CustomSwitch from '../../components/shared/Swtich/Switch';
 import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import styles from './Component.module.css';
 import { showAlert } from '../../utils/Alert';
+import Input from '../../components/Input/Input';
 
 const ComponentPage = () => {
     const messages = [
@@ -56,6 +57,7 @@ const ComponentPage = () => {
                     label="Big Kahuna Burger Ltd."
                 />
                 <CustomSwitch enabled={switchEnabled} onChange={handleSwitchChange} />
+                <Input />
             </main>
             <Footer />
         </div>
