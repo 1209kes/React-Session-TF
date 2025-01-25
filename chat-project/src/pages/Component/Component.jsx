@@ -8,6 +8,7 @@ import DropMenu from '../../components/shared/DropMenu/DropMenu';
 import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { showAlert } from '../../utils/Alert';
 import styles from './Component.module.css';
+import ChatBox from '../../components/ChatBox/ChatBox';
 
 const ComponentPage = () => {
     const messages = [
@@ -68,6 +69,8 @@ const ComponentPage = () => {
                     fontSize="1.2rem"
                 />
                 <DropMenu></DropMenu>
+                <ChatBox message="1313" isUser={false}></ChatBox>
+                <ChatBox message="1313" isUser={true}></ChatBox>
             </main>
         </div>
     );
