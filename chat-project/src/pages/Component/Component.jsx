@@ -4,7 +4,7 @@ import MessageList from '../../components/MessageList/MessageList';
 import CustomCheckbox from '../../components/shared/CheckBox/CheckBox';
 import CustomSwitch from '../../components/shared/Swtich/Switch';
 import Input from '../../components/Input/Input';
-import { faUser, faCog, faPlus, faSadCry } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { showAlert } from '../../utils/Alert';
 import styles from './Component.module.css';
 

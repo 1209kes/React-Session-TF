@@ -4,7 +4,7 @@
     justify-content: center;
     background-color: rgb(189, 186, 186);
     border-radius: 39px;
-    padding: 5px 10px;
+    padding: 5px;
     gap: 5px;
     width: 100%;
     max-width: 600px;
@@ -15,7 +15,7 @@
     flex-grow: 1;
     border: none;
     border-radius: 10px;
-    padding: 10px 15px;
+    padding: 10px;
     font-size: 14px;
     outline: none;
     background-color: rgb(189, 186, 186);
