@@ -59,6 +59,13 @@ const ComponentPage = () => {
                 />
                 <CustomSwitch enabled={switchEnabled} onChange={handleSwitchChange} />
                 <Input />
+                <Button
+                    label="Get Started"
+                    onClick={StartClick}
+                    borderRadius="40px"
+                    justifyContent="center"
+                    fontSize="1.2rem"
+                />
             </main>
         </div>
     );

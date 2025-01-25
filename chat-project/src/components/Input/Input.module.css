@@ -23,7 +23,7 @@
 
 .label {
     flex-grow: 1;
-    text-align: inherit; /* text-align이 동적으로 적용되도록 설정 */
+    text-align: inherit;
 }
 
 .inputField::placeholder {
