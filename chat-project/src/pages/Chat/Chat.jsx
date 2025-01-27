@@ -7,87 +7,114 @@ import Header from "../../components/layout/Header/Header";
 import Input from "../../components/Input/Input";
 import chatHistory from "../../data/chatHistory.json";
 import ChatBox from "../../components/ChatBox/ChatBox";
+
 const ChatPage = () => {
-    //랜더링 시 채팅 내역 불러오기
+    // 채팅 내역 불러오기
     const [chatList, setChatList] = useState([]);
     const [chatTitleList, setChatTitleList] = useState([]);
+
     useEffect(() => {
-        setChatList(chatHistory);
+        setChatList(chatHistory); // 초기 채팅 내역 설정
     }, []);
 
     useEffect(() => {
+        // 채팅 제목 리스트 업데이트
         setChatTitleList(chatList.map((chat) => chat.title));
     }, [chatList]);
 
-    //초기 상태 관리(채팅을 불렀는가?)
+    // 초기 상태 관리
     const [selectedChat, setSelectedChat] = useState(null);
-    //입력 필드 상태 관리
     const [inputValue, setInputValue] = useState("");
 
     useEffect(() => {
-        setInputValue(""); // 선택된 채팅이 바뀔 때마다 입력 필드 초기화
+        setInputValue(""); // 선택된 채팅이 바뀔 때 입력 필드 초기화
     }, [selectedChat]);
 
-
+    // 메시지 전송
     const handleSendMessage = () => {
-        if (!inputValue.trim() || !selectedChat) return; // 빈 메시지나 선택된 채팅이 없으면 무시
+        if (!inputValue.trim()) {
+            console.log("Empty input or no selected chat");
+            return;
+        }
+
+        if (selectedChat === null) {
+            // 새로운 채팅 내역 생성
+            const newChatId = chatList.length + 1;
+            const newChat = {
+                chatId: newChatId,
+                title: inputValue, // 입력된 내용을 제목으로 설정
+                messages: [
+                    {
+                        sender: "user",
+                        text: inputValue, // 입력된 메시지
+                    },
+                    {
+                        sender: "bot",
+                        text: "This is a bot response!", // 봇의 기본 응답
+                    },
+                ],
+            };
     
-        const userMessage = { 
-            sender: "user", 
-            text: inputValue, 
-            timestamp: new Date().toLocaleTimeString() 
+            setChatList((prevChatList) => [...prevChatList, newChat]); // 새로운 채팅 추가
+            setSelectedChat(newChatId); // 새로 생성된 채팅을 선택
+            setInputValue(""); // 입력 필드 초기화
+            console.log("New chat created:", newChat);
+            return;
+        }
+
+        const userMessage = {
+            sender: "user",
+            text: inputValue,
         };
-    
+
         setChatList((prevChatList) =>
             prevChatList.map((chat) =>
-                chat.id === selectedChat.id
+                chat.chatId === selectedChat // chatId로 매칭
                     ? { ...chat, messages: [...chat.messages, userMessage] }
                     : chat
             )
         );
-        console.log(chatList)
+
         setInputValue(""); // 입력 필드 초기화
     };
-    
 
+    // 봇 응답
     useEffect(() => {
-        // selectedChat이 없거나 마지막 메시지가 사용자의 메시지가 아니면 응답하지 않음
-        if (!selectedChat || !chatList.find((chat) => chat.id === selectedChat.id)?.messages.length) {
-            return;
-        }
-    
-        const lastMessage =
-            chatList.find((chat) => chat.id === selectedChat.id)?.messages.slice(-1)[0];
-    
-        if (lastMessage.sender === "bot") return; // 마지막 메시지가 봇이면 무시
-    
+        if (!selectedChat) return;
+
+        const selectedChatData = chatList.find((chat) => chat.chatId === selectedChat);
+
+        if (!selectedChatData || selectedChatData.messages.length === 0) return;
+
+        const lastMessage = selectedChatData.messages.slice(-1)[0];
+
+        if (lastMessage.sender === "bot") return; // 봇 응답 중복 방지
+
         const timer = setTimeout(() => {
             const botMessage = {
                 sender: "bot",
-                text: "This is a bot response!", // 봇의 응답
-                timestamp: new Date().toLocaleTimeString(),
+                text: "This is a bot response!",
             };
-    
-            // 선택된 채팅에 봇 메시지 추가
+
             setChatList((prevChatList) =>
                 prevChatList.map((chat) =>
-                    chat.id === selectedChat.id
+                    chat.chatId === selectedChat
                         ? { ...chat, messages: [...chat.messages, botMessage] }
                         : chat
                 )
             );
-        }, 1000); // 챗봇 응답 대기 시간
-    
+        }, 1000);
+
         return () => clearTimeout(timer);
-    }, [chatList, selectedChat]);
+    }, [selectedChat, chatList]);
 
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.headerSection}>
-                    <Button label="Begin a New Chat" rightIcon={faPlus} />
+                    <Button label="Begin a New Chat" rightIcon={faPlus} onClick={()=>setSelectedChat(null)} />
                     <MessageList
-                        setSelectedChat={setSelectedChat}
+                        setSelectedChat={(id) => setSelectedChat(id + 1)}
                         messages={chatTitleList}
                     />
                 </div>
@@ -118,20 +145,22 @@ const ChatPage = () => {
                     </div>
                 ) : (
                     <div className={styles.chatHistory}>
-                        <h1 className={styles.chatTitle}>{chatList[selectedChat].title}</h1>
-                                {chatList[selectedChat].messages.map((message, messageIndex) => (
-                                    <ChatBox
-                                        key={messageIndex}
-                                        message={message.text}
-                                        isUser={message.sender === "user"} // user인지 bot인지에 따라 다르게 렌더링
-                                    />
-                                ))}
-
+                        <h1 className={styles.chatTitle}>
+                            {chatList.find((chat) => chat.chatId === selectedChat)?.title}
+                        </h1>
+                        {chatList
+                            .find((chat) => chat.chatId === selectedChat)
+                            ?.messages.map((message, messageIndex) => (
+                                <ChatBox
+                                    key={messageIndex}
+                                    message={message.text}
+                                    isUser={message.sender === "user"}
+                                />
+                            ))}
                     </div>
                 )}
-
                 <div className={styles.inputContainer}>
-                <Input
+                    <Input
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         placeholder="Type your message..."
