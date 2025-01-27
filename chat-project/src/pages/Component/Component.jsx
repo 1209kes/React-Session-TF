@@ -22,16 +22,13 @@ const ComponentPage = () => {
     // useState로 checkbox의 상태 관리
     const [checkboxChecked, setcheckboxChecked] = useState(false);
     const handleCheckboxChange = (isChecked) => {
-        setcheckboxChecked(isChecked); // 상태 업데이트
-        console.log('Checkbox is now:', isChecked);
+        setcheckboxChecked(isChecked);
     };
 
     // useState로 Switch의 상태 관리
     const [switchEnabled, setSwitchEnabled] = useState(false);
-
     const handleSwitchChange = (isEnabled) => {
-        setSwitchEnabled(isEnabled); // 상태 업데이트
-        console.log('Switch is now:', isEnabled);
+        setSwitchEnabled(isEnabled);
     };
 
     const UserClick = () => {

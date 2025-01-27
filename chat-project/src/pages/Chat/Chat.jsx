@@ -1,8 +1,6 @@
 import React from 'react';
-import Button from '../../components/shared/Button/Button';
-import MessageList from '../../components/MessageList/MessageList';
-import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
-import styles from './Chat.module.css';
+
+import SideBar from '../../components/SideBar/SideBar';
 
 const ChatPage = () => {
     const messages = [
@@ -21,17 +19,7 @@ const ChatPage = () => {
         alert('안녕하세요! 유저 프로필입니다.');
     };
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.headerSection}>
-                <Button label="Begin a New Chat" onClick={ChatClick} rightIcon={faPlus} />
-                <MessageList messages={messages} />
-            </div>
-            <div className={styles.footerSection}>
-                <Button label="User Profile" onClick={UserClick} leftIcon={faUser} rightIcon={faCog} />
-            </div>
-        </div>
-    );
+    return <SideBar messages={messages} ChatClick={ChatClick} UserClick={UserClick}></SideBar>;
 };
 
 export default ChatPage;

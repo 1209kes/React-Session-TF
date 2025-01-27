@@ -1,4 +1,4 @@
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import { Tab, TabGroup, TabList } from '@headlessui/react';
 import styles from './DropMenu.module.css';
 
 export default function DropMenu() {
