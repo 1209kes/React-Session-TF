@@ -1,10 +1,11 @@
 import React from 'react';
 import './Setting.module.css';
+import Header from '../../components/layout/Header/Header';
 
 const Setting = () => {
     return (
         <div>
-            <h1>Setting</h1>
+            <Header />
         </div>
     );
 };

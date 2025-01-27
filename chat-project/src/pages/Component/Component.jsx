@@ -9,6 +9,7 @@ import { faUser, faCog, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { showAlert } from '../../utils/Alert';
 import styles from './Component.module.css';
 import ChatBox from '../../components/ChatBox/ChatBox';
+import Header from '../../components/layout/Header/Header';
 
 const ComponentPage = () => {
     const messages = [
@@ -49,18 +50,31 @@ const ComponentPage = () => {
     return (
         <div className={styles['page-container']}>
             <main className={styles.content}>
+                <h2>Header Examples</h2>
+                <Header />
+                <h2>Button Examples</h2>
                 <Button label="User Profile" onClick={UserClick} />
                 <Button label="Begin a New Chat" onClick={ChatClick} />
                 <Button label="User Profile" onClick={UserClick} leftIcon={faUser} rightIcon={faCog} />
                 <Button label="Begin a New Chat" onClick={ChatClick} rightIcon={faPlus} />
+
+                <h2>Message List</h2>
                 <MessageList messages={messages} />
+
+                <h2>Custom Checkbox</h2>
                 <CustomCheckbox
                     checked={checkboxChecked}
                     onChange={handleCheckboxChange}
                     label="Big Kahuna Burger Ltd."
                 />
+
+                <h2>Custom Switch</h2>
                 <CustomSwitch enabled={switchEnabled} onChange={handleSwitchChange} />
+
+                <h2>Input Field</h2>
                 <Input />
+
+                <h2>Get Started Button</h2>
                 <Button
                     label="Get Started"
                     onClick={StartClick}
@@ -68,9 +82,13 @@ const ComponentPage = () => {
                     justifyContent="center"
                     fontSize="1.2rem"
                 />
-                <DropMenu></DropMenu>
-                <ChatBox message="1313" isUser={false}></ChatBox>
-                <ChatBox message="1313" isUser={true}></ChatBox>
+
+                <h2>Drop Menu</h2>
+                <DropMenu />
+
+                <h2>Chat Box Examples</h2>
+                <ChatBox message="1313" isUser={false} />
+                <ChatBox message="1313" isUser={true} />
             </main>
         </div>
     );

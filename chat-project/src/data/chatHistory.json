@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "How can I increase the number of users?",
+        "messages": [
+            { "sender": "bot", "text": "Hello! How can I help you?", "timestamp": "10:00 AM" },
+            { "sender": "user", "text": "I need advice on user growth.", "timestamp": "10:01 AM" },
+            { "sender": "bot", "text": "Sure! Let's discuss strategies.", "timestamp": "10:02 AM" },
+            { "sender": "user", "text": "Should I focus on social media?", "timestamp": "10:03 AM" },
+            { "sender": "bot", "text": "Yes, social media can be very effective.", "timestamp": "10:04 AM" }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "What's the best approach to handle errors?",
+        "messages": [
+            { "sender": "bot", "text": "Do you have any specific examples?", "timestamp": "10:05 AM" },
+            { "sender": "user", "text": "Yes, error handling in forms.", "timestamp": "10:06 AM" },
+            { "sender": "bot", "text": "Alright, I suggest using try-catch.", "timestamp": "10:07 AM" },
+            { "sender": "user", "text": "How about showing user-friendly messages?", "timestamp": "10:08 AM" },
+            { "sender": "bot", "text": "Good idea! It improves user experience.", "timestamp": "10:09 AM" }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "How can I improve my app's performance?",
+        "messages": [
+            { "sender": "bot", "text": "What specific areas are slow?", "timestamp": "10:10 AM" },
+            { "sender": "user", "text": "Loading times are high.", "timestamp": "10:11 AM" },
+            { "sender": "bot", "text": "Consider lazy loading and caching.", "timestamp": "10:12 AM" },
+            { "sender": "user", "text": "What about optimizing images?", "timestamp": "10:13 AM" },
+            { "sender": "bot", "text": "Yes, compressing images helps a lot.", "timestamp": "10:14 AM" }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "What are the latest trends in web development?",
+        "messages": [
+            { "sender": "bot", "text": "There are many new frameworks.", "timestamp": "10:15 AM" },
+            { "sender": "user", "text": "Which ones are popular?", "timestamp": "10:16 AM" },
+            { "sender": "bot", "text": "React and Angular are widely used.", "timestamp": "10:17 AM" },
+            { "sender": "user", "text": "What about Next.js?", "timestamp": "10:18 AM" },
+            { "sender": "bot", "text": "Next.js is growing rapidly!", "timestamp": "10:19 AM" }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "How can I learn advanced React patterns?",
+        "messages": [
+            { "sender": "bot", "text": "Have you tried using hooks?", "timestamp": "10:20 AM" },
+            { "sender": "user", "text": "Yes, but I need more guidance.", "timestamp": "10:21 AM" },
+            { "sender": "bot", "text": "I recommend reading the official docs.", "timestamp": "10:22 AM" },
+            { "sender": "user", "text": "What about community resources?", "timestamp": "10:23 AM" },
+            { "sender": "bot", "text": "Great idea! Forums like Stack Overflow are helpful.", "timestamp": "10:24 AM" }
+        ]
+    }
+]
