@@ -1,36 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CircleButton from '../shared/CircleButton/CircleButton';
 import { faPlus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import styles from './Input.module.css';
 
-const Input = () => {
-    const [inputValue, setInputValue] = useState('');
-
-    const handlePlusClick = () => {
-        alert('다른 LLM과 대화하시겠습니까?');
-    };
-
-    const handleSendClick = () => {
-        alert('AI에게 대화를 전송하였습니다');
-    };
-
-    const handleInputChange = (event) => {
-        setInputValue(event.target.value);
+const Input = ({ value, onChange, placeholder, onSend }) => {
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            onSend();
+        }
     };
 
     return (
         <div className={styles.inputContainer}>
-            <CircleButton icon={faPlus} onClick={handlePlusClick} color="#333333" />
+            <CircleButton icon={faPlus} onClick={() => console.log('Plus clicked')} color="#333333" />
             <input
                 type="text"
-                value={inputValue}
-                onChange={handleInputChange}
+                value={value}
+                onChange={onChange}
                 className={styles.inputField}
-                placeholder="Type your prompt here..."
+                placeholder={placeholder}
+                onKeyDown={handleKeyDown}
             />
-            <CircleButton icon={faArrowRight} onClick={handleSendClick} color="#9747FF" />
+            <CircleButton icon={faArrowRight} onClick={onSend} color="#9747FF" />
         </div>
     );
 };
-
-export default Input;

@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 56px;
+    border-radius: 50px;
     background-color: #f7f7f7;
-    width: 530px;
-    height: 67px;
+    width: 520px;
+    height: 57px;
 }
 
 .tabList {
@@ -18,7 +18,8 @@
     color: #8a8a8a;
     font-size: 1.3rem;
     width: 170px;
-    height: 67px;
+    height: 47px;
+    font-size: 18px;
 }
 
 .selected {
@@ -26,7 +27,7 @@
     background-color: #000000;
     border-radius: 56px;
     width: 160px;
-    height: 55px;
+    height: 47px;
     display: flex;
     justify-content: center;
     align-items: center;
