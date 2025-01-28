@@ -1,41 +1,43 @@
 import React from 'react';
 import { Tab, TabGroup, TabList } from '@headlessui/react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './DropMenu.module.css';
 
-export default function DropMenu() {
+const DropMenu = () => {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleTabChange = (path) => {
         navigate(path);
     };
+
+    const tabs = [
+        { label: 'Home', path: '/component' },
+        { label: 'Chat', path: '/chat' },
+        { label: 'Setting', path: '/setting' },
+    ];
 
     return (
         <div className={styles.container}>
             <div className={styles.tabWrapper}>
                 <TabGroup>
                     <TabList className={styles.tabList}>
-                        <Tab
-                            className={({ selected }) => (selected ? `${styles.tab} ${styles.selected}` : styles.tab)}
-                            onClick={() => handleTabChange('/')}
-                        >
-                            Home
-                        </Tab>
-                        <Tab
-                            className={({ selected }) => (selected ? `${styles.tab} ${styles.selected}` : styles.tab)}
-                            onClick={() => handleTabChange('/chat')}
-                        >
-                            Chat
-                        </Tab>
-                        <Tab
-                            className={({ selected }) => (selected ? `${styles.tab} ${styles.selected}` : styles.tab)}
-                            onClick={() => handleTabChange('/setting')}
-                        >
-                            Setting
-                        </Tab>
+                        {tabs.map((tab) => (
+                            <Tab
+                                key={tab.path}
+                                className={({ selected }) =>
+                                    location.pathname === tab.path ? `${styles.tab} ${styles.selected}` : styles.tab
+                                }
+                                onClick={() => handleTabChange(tab.path)}
+                            >
+                                {tab.label}
+                            </Tab>
+                        ))}
                     </TabList>
                 </TabGroup>
             </div>
         </div>
     );
-}
+};
+
+export default DropMenu;

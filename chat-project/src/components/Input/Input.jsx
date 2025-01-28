@@ -26,3 +26,5 @@ const Input = ({ value, onChange, placeholder, onSend }) => {
         </div>
     );
 };
+
+export default Input;
