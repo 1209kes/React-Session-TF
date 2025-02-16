@@ -1,0 +1,16 @@
+.messageList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(30, 30, 30, 0.54);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+}
+
+.messageTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 10px;
+}

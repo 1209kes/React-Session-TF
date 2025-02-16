@@ -1,0 +1,28 @@
+.messageItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #424242;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.messageItem:hover {
+    background-color: #444444;
+}
+
+.messageText {
+    flex-grow: 1;
+    color: #cccccc;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.messageIcon {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
