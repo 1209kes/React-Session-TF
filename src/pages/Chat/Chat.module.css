@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    width: 300px;
+    background-color: #1f1f1f;
+    padding: 1rem;
+}
+
+.chatSection {
+    flex: 1; /* 나머지 공간 채우기 */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 30px;
+}

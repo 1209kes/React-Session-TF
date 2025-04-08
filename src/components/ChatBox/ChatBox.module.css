@@ -1,0 +1,23 @@
+.chatBox {
+    max-width: 80%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.botMessage {
+    background-color: #f3f4f6;
+    color: #374151;
+    align-self: flex-start;
+}
+
+.userMessage {
+    background: linear-gradient(to right, #c084fc, #a855f7);
+    color: #ffffff;
+    align-self: flex-end;
+}

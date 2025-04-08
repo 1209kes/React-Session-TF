@@ -1,0 +1,47 @@
+.chatInit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatInit img {
+    margin-bottom: 100px;
+    width: 200px;
+}
+
+.initTitle {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.initSubtitle {
+    font-size: 20px;
+    color: #767676;
+    max-width: 530px;
+    text-align: center;
+}
+
+.gradientText {
+    font-size: inherit;
+    background: linear-gradient(90deg, #000000, #974fff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chatHistory {
+    padding: 30px;
+    flex-grow: 1;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatTitle {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: left;
+}

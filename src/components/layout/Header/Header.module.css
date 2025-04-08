@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* 3개 영역을 좌, 중간, 우로 분리 */
+    align-items: center; /* 세로 중앙 정렬 */
+    padding: 0 1rem; /* 좌우 여백 추가 */
+    height: 60px; /* 헤더 높이 */
+    width: 100%;
+}
+
+.left {
+    flex: 1; /* 왼쪽 영역 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center {
+    flex: 1; /* 중간 영역 */
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+}
+
+.right {
+    flex: 1; /* 오른쪽 영역 */
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 30px; /* 로고 크기 */
+    cursor: pointer;
+}
