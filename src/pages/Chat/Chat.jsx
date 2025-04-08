@@ -5,7 +5,6 @@ import Header from '../../components/layout/Header/Header';
 import Input from '../../components/Input/Input';
 import ChatPanel from '../../components/ChatPanel/ChatPanel';
 import { createNewChat, addUserMessageToChat, addBotMessageToChat } from '../../utils/chatUtils';
-import { getChatResponse } from '../../utils/openai'; // ← 이렇게 불러오기
 
 const ChatPage = () => {
     const [chatList, setChatList] = useState([]);
